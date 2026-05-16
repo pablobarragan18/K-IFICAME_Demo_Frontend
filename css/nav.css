@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Franklin Gothic Heavy'; /* Nombre de la fuente que usarás en CSS */
+    src: url('../fonts/FRAHV.TTF') format('truetype');
+    font-weight: normal; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente (normal, italic, etc.) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 130px;
+    width: 100%;
+    transform: translateY(-100px);
+    transition: all .7s;
+    z-index: 3;
+}
+
+.navContainer{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background: #01C302;
+}
+
+.lower{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 350px;
+    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+    background: #01C302;
+    color: #fff;
+    font-size: 2em;
+    transition: all .5s;
+      /* Animación de flote (arriba-abajo) */
+  animation: floatScroll 2s ease-in-out infinite;
+}
+
+/* 1. Animación del ratón flotando en el espacio */
+@keyframes floatScroll {
+  0% { transform: translate(0%, 0px); }
+  50% { transform: translate(0%, -5px); } /* Sube 15px */
+  100% { transform: translate(0%, 0px); }
+}
+
+
+.lower .rowLower{
+    transform: rotate(540deg);
+    transition: all .5s;
+}
+
+.activeLower{
+    transform: translateY(-20px);
+}
+
+.activeLower .rowLower{
+    transform: rotate(0deg);
+}
+
+.lower:hover{
+    cursor: pointer;
+}
+
+.imagotipo{
+    width: 550px;
+    margin-left: 20px;
+}
+
+.activeNav{
+    transform: translateY(0px);
+}
+
+nav .navIcon{
+    color: #fff;
+    font-size: 3.5em;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: all .5s;
+}
+
+nav .navIcon:hover{
+    cursor: pointer;
+    transform: scale(105%);
+}
+
+.containerIcon{
+    right: 0;
+    position: absolute;
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 1366px) {
+    nav{
+        height: 110px;
+        transform: translateY(-80px);
+    }
+
+    .imagotipo{
+        width: 450px;
+        margin-left: 20px;
+    }
+
+    nav .navIcon{
+        font-size: 3em;
+    }
+}
